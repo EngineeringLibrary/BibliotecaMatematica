@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QmessageBox>
 #include "client.h"
+#include <SistemasdeControle/headers/graphicLibs/plot.h>
 
 namespace Ui {
 class MainWindow;
