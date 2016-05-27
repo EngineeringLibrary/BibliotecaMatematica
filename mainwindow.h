@@ -33,6 +33,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Client *wifi;
+//    PlotHandler::plot<double> *plotDados [10];
+//    long long unsigned int Amostras;
 };
 
 #endif // MAINWINDOW_H

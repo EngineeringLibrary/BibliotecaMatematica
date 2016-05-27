@@ -13,8 +13,6 @@ PID<UsedType>::PID()
     this->integralError = 0;
 
     this->Step = 0;
-    this->upperLimit = 2000;
-    this->lowerLimit = -2000;
 }
 
 template<typename UsedType>
@@ -50,7 +48,6 @@ template<typename UsedType>
 void PID<UsedType>::difError()
 {
     this->derivativeError = ((this->Error - this->pastError)/this->Step);
-    this->pastError = this->Error;
 }
 
 template<typename UsedType>
@@ -83,6 +80,10 @@ UsedType PID<UsedType>::OutputControl(UsedType Reference, UsedType SignalInput)
     intError();
     this->PIDout = (this->kp*this->Error + this->ki*this->integralError + this->kd*this->derivativeError);
     antReset();
-    
     return this->PIDout;
+
 }
+
+template class PID <int>;
+template class PID <float>;
+template class PID <double>;
