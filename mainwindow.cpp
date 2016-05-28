@@ -44,5 +44,8 @@ void MainWindow::SucessoNaConexao()
 void MainWindow::RecebimentoDosDados()
 {
 //   ui->lineDadosRecebidos->setText(wifi->dataReceived());
-   ui->lineDadosRecebidos->setText(QString::number(A));
+//   ui->lineDadosRecebidos->setText(QString::number(A));
+    std::string str;
+    str << A;
+    ui->lineDadosRecebidos->setText(str.c_str());
 }
