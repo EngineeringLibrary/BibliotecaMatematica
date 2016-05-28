@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     PlotHandler::plot<double> P("1,2,3,4,5","1,2,3,4,5",ui-> grafico1);
     PlotHandler::plot<double> C("1,2,3,4,5","1,2,3,4,5",ui-> grafico2);
-    A = ("1.0,2.0;3.0,5.0");
+    A = ("1,2;3,5");
 }
 
 MainWindow::~MainWindow()
