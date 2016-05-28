@@ -6,8 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //PlotHandler::plot<double> P("1,2,3,4,5","1,2,3,4,5",ui-> grafico1);
-    PlotHandler::plot<double> C("1,2,3,4,5","1,2,3,4,5",ui->grafico2);
+    PlotHandler::plot<double> P("1,2,3,4,5","1,2,3,4,5",ui-> grafico1);
+    PlotHandler::plot<double> C("1,2,3,4,5","1,2,3,4,5",ui-> grafico2);
+    A = ("1.0,2.0;3.0,5.0");
 }
 
 MainWindow::~MainWindow()
@@ -42,5 +43,6 @@ void MainWindow::SucessoNaConexao()
 
 void MainWindow::RecebimentoDosDados()
 {
-   ui->lineDadosRecebidos->setText(wifi->dataReceived());
+//   ui->lineDadosRecebidos->setText(wifi->dataReceived());
+   ui->lineDadosRecebidos->setText(QString::number(A));
 }

@@ -5,6 +5,7 @@
 #include <QmessageBox>
 #include "client.h"
 #include <SistemasdeControle/headers/graphicLibs/plot.h>
+#include <SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h>
 
 namespace Ui {
 class MainWindow;
@@ -33,8 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Client *wifi;
-//    PlotHandler::plot<double> *plotDados [10];
-//    long long unsigned int Amostras;
+    LinAlg::Matrix<double> A;
 };
 
 #endif // MAINWINDOW_H

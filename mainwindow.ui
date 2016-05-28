@@ -14,26 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="grafico1" native="true">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>110</y>
-      <width>291</width>
-      <height>191</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="grafico2" native="true">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>110</y>
-      <width>291</width>
-      <height>191</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
@@ -60,7 +40,7 @@
      <string>Gráfico 2:</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -125,7 +105,7 @@
      <string>Conectar</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -161,22 +141,43 @@
      </item>
     </layout>
    </widget>
-   <zorder>botaoConectar</zorder>
-   <zorder>lineIP</zorder>
-   <zorder>linePorta</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>lineIP</zorder>
-   <zorder>enviarDados</zorder>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>109</x>
+      <y>109</y>
+      <width>621</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="grafico1" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>291</width>
+       <height>191</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="grafico2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>0</y>
+       <width>291</width>
+       <height>191</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>botaoDesconectar</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>botaoConectar_2</zorder>
-   <zorder>lineEnviarDados</zorder>
-   <zorder>label_3</zorder>
-   <zorder>lineDadosRecebidos</zorder>
-   <zorder>label_4</zorder>
-   <zorder>grafico1</zorder>
-   <zorder>grafico2</zorder>
    <zorder>label_5</zorder>
    <zorder>label_6</zorder>
+   <zorder>widget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
