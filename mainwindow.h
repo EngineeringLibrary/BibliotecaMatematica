@@ -34,7 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Client *wifi;
-    LinAlg::Matrix<double> A;
+    LinAlg::Matrix<double> A,B,C,D;
 };
 
 #endif // MAINWINDOW_H
