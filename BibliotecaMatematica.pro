@@ -24,6 +24,8 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h \
     SistemasdeControle/src/graphicLibs/plot.hpp \
     SistemasdeControle/headers/graphicLibs/plot.h \
-    qcustomplot.h
+    qcustomplot.h \
+    SistemasdeControle/src/modelLibs/model.hpp \
+    SistemasdeControle/headers/modelLibs/model.h
 
 FORMS    += mainwindow.ui

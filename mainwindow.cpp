@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
