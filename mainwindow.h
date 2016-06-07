@@ -1,11 +1,18 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <cstdlib>
+#include <ctime>
 #include <QMainWindow>
 #include <QmessageBox>
 #include "client.h"
-#include <SistemasdeControle/headers/graphicLibs/plot.h>
-#include <SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h>
+#include "SistemasdeControle/headers/graphicLibs/plot.h"
+#include "SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h"
+//#include "SistemasdeControle/headers/modelLibs/model.h"
+//#include "SistemasdeControle/headers/modelLibs/arx.h"
+//#include "SistemasdeControle/headers/modelLibs/statespace.h"
+#include "generalfunction.h"
+#include "gauselimination.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,10 +38,17 @@ private slots:
 
     void SucessoNaConexao();
 
+    void on_simularValores_clicked();
+
 private:
+
     Ui::MainWindow *ui;
     Client *wifi;
-    LinAlg::Matrix<double> A,B,C,D;
+    ModelHandler::Model<double> *model;
+    PlotHandler::plot<double> *P;
+    LinAlg::Matrix<double> U,Y;
+    double Time;
+
 };
 
 #endif // MAINWINDOW_H

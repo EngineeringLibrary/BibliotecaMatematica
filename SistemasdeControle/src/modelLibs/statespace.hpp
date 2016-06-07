@@ -236,7 +236,7 @@ LinAlg::Matrix<Type> ModelHandler::StateSpace<Type>::sim(Type lmin, Type lmax, T
 }
 
 template <typename Type>
-std::string ModelHandler::StateSpace<Type>::print()
+std::string& ModelHandler::StateSpace<Type>::print()
 {
     std::string output;
 

@@ -658,8 +658,18 @@ template<typename Type>
 std::string& LinAlg::operator<< (std::string& output, const LinAlg::Matrix<Type> mat)
 {
     std::stringstream ss;
-    ss << mat;
-    output += ss.str();
+    for(unsigned i= 1; i <= mat.getNumberOfRows(); i++)
+    {
+        for(unsigned j = 1; j <=mat.getNumberOfColumns(); j++)
+            if(mat(i,j)!=0)
+                ss << std::setw(2*3+1)<<std::setprecision(3)<<std::fixed << mat(i,j)<<' ';
+            else
+                ss << std::setw(2*3+1)<<std::setprecision(0)<<std::fixed << mat(i,j)<<' ';
+        if(i == mat.getNumberOfRows())
+            continue;
+        ss<<';';
+    }
+    output +=ss.str();
     return output;
 }
 

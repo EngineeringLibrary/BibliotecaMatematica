@@ -26,6 +26,24 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/headers/graphicLibs/plot.h \
     qcustomplot.h \
     SistemasdeControle/src/modelLibs/model.hpp \
-    SistemasdeControle/headers/modelLibs/model.h
+    SistemasdeControle/headers/modelLibs/model.h \
+    SistemasdeControle/headers/modelLibs/arx.h \
+    SistemasdeControle/src/modelLibs/arx.hpp \
+    SistemasdeControle/headers/modelLibs/statespace.h \
+    SistemasdeControle/src/modelLibs/statespace.hpp \
+    generalfunction.h \
+    generalfunction.hpp \
+    lagrange.h \
+    lagrange.hpp \
+    SistemasdeControle/headers/primitiveLibs/polynom.h \
+    SistemasdeControle/src/primitiveLibs/polynom.hpp \
+    elimincaodegaus.h \
+    elimincaodegaus.hpp \
+    SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h \
+    SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp \
+    eliminacaogaussjacobi.h \
+    eliminacaogaussjacobi.hpp \
+    gauselimination.h \
+    gauselimination.hpp
 
 FORMS    += mainwindow.ui

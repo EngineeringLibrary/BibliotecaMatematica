@@ -48,7 +48,7 @@ namespace ModelHandler {
 
         void c2dConversion(); //ok
         void d2cConversion();
-        std::string print(); //ok
+        std::string& print(); //ok
 
     private:
         Type factorial(unsigned n); // ok
