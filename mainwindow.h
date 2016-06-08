@@ -8,12 +8,10 @@
 #include "client.h"
 #include "SistemasdeControle/headers/graphicLibs/plot.h"
 #include "SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h"
-//#include "SistemasdeControle/headers/modelLibs/model.h"
-//#include "SistemasdeControle/headers/modelLibs/arx.h"
-//#include "SistemasdeControle/headers/modelLibs/statespace.h"
 #include "generalfunction.h"
 #include "gauselimination.h"
 #include "gaussjacobi.h"
+#include "gaussseidel.h"
 
 namespace Ui {
 class MainWindow;

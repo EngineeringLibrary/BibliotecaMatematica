@@ -10,7 +10,7 @@ bool LinAlg::CriterioDeLinhas(const LinAlg::Matrix<Type> &A)
         for(unsigned j = 1; j <= A.getNumberOfColumns(); ++j)
             if(i != j)
             {
-                AlfaTemp += Type (fabs(A(i,j))/(A(i,i)));
+                AlfaTemp += Type (fabs(A(i,j)/(A(i,i))));
             }
         if(AlfaTemp > Alfa)
             Alfa = AlfaTemp;

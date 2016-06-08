@@ -44,6 +44,8 @@ HEADERS  += mainwindow.h \
     gauselimination.h \
     gauselimination.hpp \
     gaussjacobi.h \
-    gaussjacobi.hpp
+    gaussjacobi.hpp \
+    gaussseidel.h \
+    gaussseidel.hpp
 
 FORMS    += mainwindow.ui

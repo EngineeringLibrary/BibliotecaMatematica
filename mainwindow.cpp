@@ -102,22 +102,29 @@ void MainWindow::RecebimentoDosDados()
 void MainWindow::on_simularValores_clicked()
 {
 
-    LinAlg::Matrix<double> U = ui->lineSimular->text().toStdString().c_str();
-    LinAlg::Matrix<double> Y = U;
+//    LinAlg::Matrix<double> U = ui->lineSimular->text().toStdString().c_str();
+//    LinAlg::Matrix<double> Y = U;
 
-    for(unsigned i = 1; i <= U.getNumberOfRows(); ++i)
+//    for(unsigned i = 1; i <= U.getNumberOfRows(); ++i)
+//    {
+//        Y(i,1) = model->sim(U(i,1));
+//        P->realTimeDataUpdate(U(i,1),Y(i,1));
+//    }
+//    model->setLinearModel(U,Y);
+//    LinAlg::Matrix<double> A = (~model->getLinearMatrixA())*model->getLinearMatrixA();
+//    LinAlg::Matrix<double> b = (~model->getLinearMatrixA())*model->getLinearEqualityB();
+//    LinAlg::Matrix<double> x = LinAlg::Elimination(A,b);
+    LinAlg::Matrix<double> A = "10,2,1;1,5,1;2,3,10", b = "7;-8;6";
+//    if(LinAlg::CriterioDeLinhas(A))
+//    {
+//        LinAlg::Matrix<double> x = LinAlg::GaussJacobi(A,b);
+//        std::string str;
+//        str << x;
+//        ui->textdadosRecebidos->append(str.c_str());
+//    }
+    if(LinAlg::CritSassenfeld(A))
     {
-        Y(i,1) = model->sim(U(i,1));
-        P->realTimeDataUpdate(U(i,1),Y(i,1));
-    }
-    model->setLinearModel(U,Y);
-    LinAlg::Matrix<double> A = (~model->getLinearMatrixA())*model->getLinearMatrixA();
-    LinAlg::Matrix<double> b = (~model->getLinearMatrixA())*model->getLinearEqualityB();
-//    //LinAlg::Matrix<double> x = LinAlg::Elimination(A,b);
-//    LinAlg::Matrix<double> A = "10,2,1;1,5,1;2,3,10", b = "7;-8;6";
-    if(LinAlg::CriterioDeLinhas(A))
-    {
-        LinAlg::Matrix<double> x = LinAlg::GaussJacobi(A,b);
+        LinAlg::Matrix<double> x = LinAlg::GaussSeidel(A,b);
         std::string str;
         str << x;
         ui->textdadosRecebidos->append(str.c_str());
