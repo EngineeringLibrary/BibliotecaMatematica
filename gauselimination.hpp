@@ -10,7 +10,7 @@ LinAlg::Matrix<Type> LinAlg::Elimination(LinAlg::Matrix<Type> A, LinAlg::Matrix<
         {
             Type M = A(j,i)/A(i,i);// pegando valores (ex A12/A11)
             for(unsigned k = 1; k <= AB.getNumberOfColumns(); ++k)
-                AB(2,k) -= M*AB(1,k);
+                AB(j,k) -= M*AB(i,k);
         }
 
     LinAlg::Matrix<Type> X(B.getNumberOfRows(), B.getNumberOfColumns());

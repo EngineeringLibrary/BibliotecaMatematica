@@ -114,7 +114,8 @@ void MainWindow::on_simularValores_clicked()
 //    LinAlg::Matrix<double> A = (~model->getLinearMatrixA())*model->getLinearMatrixA();
 //    LinAlg::Matrix<double> b = (~model->getLinearMatrixA())*model->getLinearEqualityB();
 //    LinAlg::Matrix<double> x = LinAlg::Elimination(A,b);
-    LinAlg::Matrix<double> A = "10,2,1;1,5,1;2,3,10", b = "7;-8;6";
+//    LinAlg::Matrix<double> A = "10,2,1;1,5,1;2,3,10", b = "7;-8;6";
+    LinAlg::Matrix<double> A = " -1,0,2;4,1,-1";
 //    if(LinAlg::CriterioDeLinhas(A))
 //    {
 //        LinAlg::Matrix<double> x = LinAlg::GaussJacobi(A,b);
@@ -122,11 +123,15 @@ void MainWindow::on_simularValores_clicked()
 //        str << x;
 //        ui->textdadosRecebidos->append(str.c_str());
 //    }
-    if(LinAlg::CritSassenfeld(A))
-    {
-        LinAlg::Matrix<double> x = LinAlg::GaussSeidel(A,b);
-        std::string str;
-        str << x;
-        ui->textdadosRecebidos->append(str.c_str());
-    }
+//    if(LinAlg::CritSassenfeld(A))
+//    {
+//        LinAlg::Matrix<double> x = LinAlg::GaussSeidel(A,b);
+//        std::string str;
+//        str << x;
+//        ui->textdadosRecebidos->append(str.c_str());
+//    }
+    LinAlg::Matrix<double> x = LinAlg::Lagrange(A);
+    std::string str;
+    str << x;
+    ui->textdadosRecebidos->append(str.c_str());
 }

@@ -37,11 +37,11 @@ PolynomHandler::Polynom<Type>::Polynom(LinAlg::Matrix<Type> Num, LinAlg::Matrix<
 template <typename Type> // testada
 PolynomHandler::Polynom<Type>::~Polynom()
 {
-    if(this->sizeNum != 0)
-        free (this->num);
+//    if(this->sizeNum != 0)
+//        delete (this->num);
 
-    if(this->sizeDen != 0)
-        free (this->den);
+//    if(this->sizeDen != 0)
+//        delete (this->den);
 
     this->num = NULL;
     this->den = NULL;
@@ -174,7 +174,7 @@ PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator+= (const 
 
     if(isZero())
     {
-        free(this->den);
+        delete(this->den);
         this->den = NULL;
         this->sizeDen = 0;
     }
@@ -182,7 +182,7 @@ PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator+= (const 
 }
 
 template <typename Type> template<typename RightType>//testada
-PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator+= (const PolynomHandler::Polynom<RightType>& rhs)
+PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator += (const PolynomHandler::Polynom<RightType>& rhs)
 {
     PolynomHandler::Polynom<Type> ret;
     unsigned max;
@@ -215,7 +215,7 @@ PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator+= (const 
    *this = ret;
    if(isZero())
    {
-       free(this->den);
+       delete(this->den);
        this->den = NULL;
        this->sizeDen = 0;
    }
@@ -230,7 +230,7 @@ PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator-= (const 
     *this *= -1;
     if(isZero())
     {
-        free(this->den);
+        delete(this->den);
         this->den = NULL;
         this->sizeDen = 0;
     }
@@ -245,7 +245,7 @@ PolynomHandler::Polynom<Type>& PolynomHandler::Polynom<Type>::operator-= (const 
     *this *= -1;
     if(isZero())
     {
-        free(this->den);
+        delete(this->den);
         this->den = NULL;
         this->sizeDen = 0;
     }
@@ -327,7 +327,7 @@ template <typename Type>
 void PolynomHandler::Polynom<Type>::init(Type Num)
 {
     this->num = initPointer<Type>(1);
-    this->den = initPointer<Type>(0);
+    this->den = initPointer<Type>(1);
     this->sizeNum = 1;
     this->sizeDen = 1;
     this->num[0] = Num;
@@ -477,10 +477,10 @@ bool PolynomHandler::VefDen(const Type *den1, const Type *den2, const unsigned &
     else
     {
         for (unsigned i = 0; i < sizeden1; ++i)
-            if (den1[i] != den2[2])
+            if (den1[i] != den2[i])
             {
-                break;
                 vef = false;
+                break;
             }
     }
 
@@ -496,7 +496,7 @@ bool PolynomHandler::VefDen(const Type *den1, const Type *den2, const unsigned &
 template <typename Type>
 Type* PolynomHandler::initPointer(const unsigned &Size)
 {
-    return (Type*)calloc((Size+1),(Size+1)*sizeof(Type*));
+    return new Type[Size+1];
 }
 
 template <typename Type> //testada
@@ -525,7 +525,7 @@ Type *PolynomHandler::MultPoly(const Type *lhs, const Type *rhs, const unsigned 
 {
     Type *ret;
 
-    ret = (Type*)calloc((lhsSize+rhsSize+1),(lhsSize+rhsSize+1)*sizeof(Type*));
+    ret = new Type[lhsSize+rhsSize+1];
     for(unsigned i = 0; i < lhsSize; ++i)
         for(unsigned j = 0; j < rhsSize; ++j)
         {

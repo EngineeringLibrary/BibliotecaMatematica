@@ -1,16 +1,13 @@
 #ifndef LAGRANGE_H
 #define LAGRANGE_H
-#include "SistemasdeControle/headers/modelLibs/model.h"
-namespace ModelHandler
+#include "SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h"
+#include "SistemasdeControle/headers/primitiveLibs/polynom.h"
+
+namespace LinAlg
 {
-template <typename Type>
-    class lagrange
-    {
-        Model<Type> F;
-    public:
-        lagrange(Model<Type> F);
-        Type encontrarFuncao(Type X, Type Y);
-    };
+    template<typename Type>
+    LinAlg::Matrix<Type> Lagrange(const LinAlg::Matrix<Type> &Y);
 }
+
 #include "lagrange.hpp"
 #endif // LAGRANGE_H

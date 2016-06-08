@@ -12,6 +12,7 @@
 #include "gauselimination.h"
 #include "gaussjacobi.h"
 #include "gaussseidel.h"
+#include "lagrange.h"
 
 namespace Ui {
 class MainWindow;
