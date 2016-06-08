@@ -13,6 +13,7 @@
 //#include "SistemasdeControle/headers/modelLibs/statespace.h"
 #include "generalfunction.h"
 #include "gauselimination.h"
+#include "gaussjacobi.h"
 
 namespace Ui {
 class MainWindow;

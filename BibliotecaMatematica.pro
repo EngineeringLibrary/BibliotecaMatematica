@@ -41,9 +41,9 @@ HEADERS  += mainwindow.h \
     elimincaodegaus.hpp \
     SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h \
     SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp \
-    eliminacaogaussjacobi.h \
-    eliminacaogaussjacobi.hpp \
     gauselimination.h \
-    gauselimination.hpp
+    gauselimination.hpp \
+    gaussjacobi.h \
+    gaussjacobi.hpp
 
 FORMS    += mainwindow.ui
